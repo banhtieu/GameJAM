@@ -24,6 +24,9 @@ public class WorkerController : BaseBehavior {
 	// Game 
 	private GameObject character;
 
+	// warning icon
+	private GameObject warningIcon;
+
 	// mouse down true
 	private bool mouseDown = false;
 
@@ -67,6 +70,10 @@ public class WorkerController : BaseBehavior {
 		Die();
 	}
 
+	void OnTriggerExit2D(Collider2D collider) {
+		warningIcon.renderer.enabled = false;
+	}
+
 	// Trigger Enter
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (state == CharacterState.WALKING) {
@@ -74,6 +81,8 @@ public class WorkerController : BaseBehavior {
 			feedingAnimal = collider.gameObject.GetComponent<AnimalController>();
 			if (feedingAnimal != null) {
 				state = CharacterState.FEEDING;
+			} else {
+				warningIcon.renderer.enabled = true;
 			}
 		}
 	}
@@ -82,6 +91,8 @@ public class WorkerController : BaseBehavior {
 	void Start () {
 		indicator = transform.Find("Indicator").gameObject;
 		character = transform.Find("Character").gameObject;
+		warningIcon = transform.Find("WarningIcon").gameObject;
+		warningIcon.renderer.enabled = false;
 		indicator.renderer.enabled = false;
 	}
 	
@@ -112,10 +123,11 @@ public class WorkerController : BaseBehavior {
 
 					Vector3 direction = position - lastPosition;
 
-					Quaternion rotation = DirectionToRotation(direction);
+					Quaternion rotation = new Quaternion(); //DirectionToRotation(direction);
 
 					if (direction.magnitude > 0.5f) {
 						GameObject step = (GameObject) Instantiate(stepPrefab, position, rotation);
+						step.transform.localScale = DirectionToScale(direction);
 						steps.Add(step);
 					}
 				}
@@ -175,14 +187,16 @@ public class WorkerController : BaseBehavior {
 			transform.Translate(movement);
 
 			// set rotation
-			character.transform.rotation = DirectionToRotation(walkingDirection);
+			//character.transform.rotation = DirectionToRotation(walkingDirection);
+
+			character.transform.localScale = DirectionToScale(walkingDirection);
 		}
 	}
 
 	// Die
 	void Die() {
 		state = CharacterState.DIE;
-		character.GetComponent<SpriteRenderer>().color = Color.red;
+		character.GetComponent<Animator>().Play("MCDie");
 	}
 
 	// Get Mouse Position
@@ -191,6 +205,13 @@ public class WorkerController : BaseBehavior {
 		mousePosition.z = -Camera.main.transform.position.z;
 
 		return Camera.main.ScreenToWorldPoint(mousePosition);
+	}
+
+	Vector3 DirectionToScale(Vector3 direction){
+		Vector3 right = new Vector3(1.0f, 0.0f, 0.0f);
+		float dot = Vector3.Dot(right, direction);
+		dot = dot > 0.0f ? -1.0f : 1.0f;
+		return new Vector3(dot, 1.0f, 1.0f);
 	}
 
 }

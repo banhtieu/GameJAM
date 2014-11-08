@@ -15,17 +15,20 @@ public class AnimalSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (animals.Count < maxAnimals) {
-			Bounds bounds = GetComponent<BoxCollider2D>().bounds;
+			float cameraHeight = Camera.main.orthographicSize;
+			float cameraWidth = Screen.width * cameraHeight / Screen.height;
+
+			Vector2 size = new Vector2(cameraWidth, cameraHeight);
+
 			float randomX = Random.value - 0.5f;
 			float randomY = Random.value - 0.5f;
 
-			Vector3 position = new Vector3(bounds.extents.x * randomX, bounds.extents.y * randomY, 0.0f);
+			Vector3 position = new Vector3(size.x * randomX, size.y * randomY, 0.0f);
 			GameObject animal = (GameObject) Instantiate(animalPrefab, position, new Quaternion());
 			animals.Add(animal);
 			animal.GetComponent<AnimalController>().SetSpawner(this);
@@ -37,5 +40,6 @@ public class AnimalSpawner : MonoBehaviour {
 	public void ReportFeed(GameObject animal) {
 
 		animals.Remove(animal);
+		GameController.GetInstance().IncreaseScore();
 	}
 }

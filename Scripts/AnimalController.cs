@@ -21,6 +21,10 @@ public class AnimalController : BaseBehavior {
 	// heart particle
 	public GameObject heartParticle;
 
+	public Color fullColor = Color.green;
+
+	public Color deadColor = Color.red;
+
 	// number of bars counts
 	public const int BARS_COUNT = 3;
 
@@ -28,22 +32,20 @@ public class AnimalController : BaseBehavior {
 	private AnimalSpawner spawner;
 	
 	// health bar
-	private GameObject[] healthItems = new GameObject[BARS_COUNT];
+	private GameObject healthBar;
 
 	// On Mouse Down
 	void OnMouseDown() {
-		GameController.GetInstance().ShowInfo(introduce);
+		GameController.GetInstance().ShowInfo(introduce, image);
 	}
 
 	// Use this for initialization
 	void Start () {
 		health = maxHP;
 
-		GameObject healthBar = transform.Find("HealthBar").gameObject;
+		GameObject bar = transform.Find("HealthBar").gameObject;
 		// get health bars
-		for (int i = 0; i < BARS_COUNT; i++) {
-			healthItems[i] = healthBar.transform.Find("Health" + i).gameObject;
-		}
+		healthBar = bar.transform.Find("Health").gameObject;
 	}
 	
 	// Update is called once per frame
@@ -70,7 +72,7 @@ public class AnimalController : BaseBehavior {
 			drainSpeed = 0;
 
 			Instantiate(heartParticle, transform.position, transform.rotation);
-			gameObject.GetComponent<Animator>().Play("AnimalDie");
+			gameObject.GetComponent<Animator>().Play("AnimalFull");
 			spawner.ReportFeed(gameObject);
 			DestroyObject(gameObject, 1.0f);
 		}
@@ -83,12 +85,9 @@ public class AnimalController : BaseBehavior {
 
 	// set current health
 	void UpdateHealthBar() {
-		// update health bars
-		for (int i = 0; i < BARS_COUNT; i++) {
-			float opacity = (health - i * (maxHP / 3)) / (maxHP / 3);
-			opacity = Mathf.Clamp(opacity, 0.0f, 1.0f);
-			healthItems[i].GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, opacity);
-		}
+		float scale = (health / (maxHP));
+		healthBar.transform.localScale = new Vector3(scale, 1.0f, 1.0f);
+		healthBar.GetComponent<SpriteRenderer>().color = Color.Lerp(deadColor, fullColor, scale);
 	}
 
 	public void SetSpawner(AnimalSpawner spawner) {

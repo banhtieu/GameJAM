@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: b9f253ece0a054e08922a90d59a5eb46
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: panda_0
+    21300002: panda_1
+    21300004: panda_2
+    21300006: panda_3
+    21300008: panda_4
+    21300010: panda_5
+    21300012: panda_6
+    21300014: panda_7
+    21300016: panda_8
+    21300018: panda_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 250
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: panda_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 52
+        width: 203
+        height: 233
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: panda_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 45
+        width: 220
+        height: 232
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: panda_2
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 43
+        width: 246
+        height: 225
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: panda_3
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 43
+        width: 235
+        height: 230
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: panda_4
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 315
+        width: 257
+        height: 112
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: panda_5
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 599
+        width: 135
+        height: 98
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: panda_6
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 532
+        width: 97
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: panda_7
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 466
+        width: 97
+        height: 40
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: panda_8
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 413
+        width: 81
+        height: 40
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: panda_9
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 366
+        width: 77
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

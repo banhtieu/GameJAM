@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: 04dc32a2c506b44e5893bb37fe59ae72
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Rhino_0
+    21300002: Rhino_1
+    21300004: Rhino_2
+    21300006: Rhino_3
+    21300008: Rhino_4
+    21300010: Rhino_5
+    21300012: Rhino_6
+    21300014: Rhino_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Rhino_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 717
+        width: 249
+        height: 171
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Rhino_1
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 876
+        width: 84
+        height: 38
+      alignment: 9
+      pivot: {x: .869590402, y: .474389315}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Rhino_2
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 834
+        width: 81
+        height: 35
+      alignment: 9
+      pivot: {x: .862282097, y: .630022347}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Rhino_3
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 859
+        width: 28
+        height: 49
+      alignment: 9
+      pivot: {x: .677703857, y: .0597322434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Rhino_4
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 672
+        width: 45
+        height: 50
+      alignment: 9
+      pivot: {x: .92928195, y: .0609594733}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Rhino_5
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 493
+        width: 68
+        height: 33
+      alignment: 9
+      pivot: {x: .976261795, y: .131282002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Rhino_6
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 281
+        width: 63
+        height: 40
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Rhino_7
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 71
+        width: 43
+        height: 62
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
