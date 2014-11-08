@@ -48,6 +48,8 @@ public class WorkerController : BaseBehavior {
 
 	// Mouse Down = true
 	void OnMouseDown() {
+
+		Debug.Log("Mouse Down");
 		mouseDown = true;
 		indicator.renderer.enabled = true;
 		timer = 0;
@@ -99,7 +101,7 @@ public class WorkerController : BaseBehavior {
 
 				// Instantiate a step
 				if (Tick()) {
-					Vector3 lastPosition = transform.position;
+					Vector3 lastPosition = new Vector3(transform.position.x, transform.position.y, 1.0f);
 
 					if (steps.Count > 0) {
 						GameObject lastStep = (GameObject) steps[steps.Count - 1];
@@ -107,6 +109,7 @@ public class WorkerController : BaseBehavior {
 					}
 
 					Vector3 position = GetMousePosition();
+
 					Vector3 direction = position - lastPosition;
 
 					Quaternion rotation = DirectionToRotation(direction);
@@ -168,7 +171,8 @@ public class WorkerController : BaseBehavior {
 		}
 
 		if (!cancelStep) {
-			transform.Translate(walkingDirection.normalized * speed * Time.deltaTime);
+			Vector3 movement = walkingDirection.normalized * speed * Time.deltaTime;
+			transform.Translate(movement);
 
 			// set rotation
 			character.transform.rotation = DirectionToRotation(walkingDirection);

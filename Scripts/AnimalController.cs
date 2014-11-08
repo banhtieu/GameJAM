@@ -12,12 +12,29 @@ public class AnimalController : BaseBehavior {
 	// current health of this object
 	public float health;
 
+	// the image of this animal
+	public Sprite image;
+
+	// The introduction
+	public string introduce;
+
+	// heart particle
+	public GameObject heartParticle;
+
 	// number of bars counts
 	public const int BARS_COUNT = 3;
 
+	// the spawner
+	private AnimalSpawner spawner;
+	
 	// health bar
 	private GameObject[] healthItems = new GameObject[BARS_COUNT];
-	
+
+	// On Mouse Down
+	void OnMouseDown() {
+		GameController.GetInstance().ShowInfo(introduce);
+	}
+
 	// Use this for initialization
 	void Start () {
 		health = maxHP;
@@ -25,7 +42,6 @@ public class AnimalController : BaseBehavior {
 		GameObject healthBar = transform.Find("HealthBar").gameObject;
 		// get health bars
 		for (int i = 0; i < BARS_COUNT; i++) {
-			Debug.Log("Health" + i);
 			healthItems[i] = healthBar.transform.Find("Health" + i).gameObject;
 		}
 	}
@@ -51,6 +67,12 @@ public class AnimalController : BaseBehavior {
 		if (health >= (float) maxHP) {
 			health = maxHP;
 			isFull = true;
+			drainSpeed = 0;
+
+			Instantiate(heartParticle, transform.position, transform.rotation);
+			gameObject.GetComponent<Animator>().Play("AnimalDie");
+			spawner.ReportFeed(gameObject);
+			DestroyObject(gameObject, 1.0f);
 		}
 
 		UpdateHealthBar();
@@ -67,5 +89,9 @@ public class AnimalController : BaseBehavior {
 			opacity = Mathf.Clamp(opacity, 0.0f, 1.0f);
 			healthItems[i].GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, opacity);
 		}
+	}
+
+	public void SetSpawner(AnimalSpawner spawner) {
+		this.spawner = spawner;
 	}
 }

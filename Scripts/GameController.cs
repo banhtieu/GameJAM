@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
+
+	// the information dialog
+	public GameObject informationDialog;
 
 	// the instance of the Game Controller
 	private static GameController instance;
@@ -9,9 +13,27 @@ public class GameController : MonoBehaviour {
 	// is game paused
 	private bool isPaused;
 
-	// pause the game
-	public void Paused() {
+
+	// Show information
+	public void ShowInfo(string text) {
+		informationDialog.GetComponent<Animator>().Play("InformationShow");
+		GameObject story = informationDialog.transform.Find("Story").gameObject;
+		story.GetComponent<Text>().text = text;
 		isPaused = true;
+	}
+
+	public void Resume() {
+		isPaused = false;
+		informationDialog.GetComponent<Animator>().Play("InformationHide");
+	}
+
+	// pause the game
+	public void Pause() {
+		if (isPaused) {
+			Resume();
+		} else {
+			isPaused = true;
+		}
 	}
 
 	// check if game is paused
@@ -33,4 +55,5 @@ public class GameController : MonoBehaviour {
 	public static GameController GetInstance() {
 		return instance;
 	}
+
 }
