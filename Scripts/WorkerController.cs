@@ -47,6 +47,10 @@ public class WorkerController : BaseBehavior {
 
 	private bool isPaused;
 
+	private int type;
+
+	private string suffix = "";
+
 	// character states
 	public enum CharacterState {
 		WALKING,
@@ -85,7 +89,7 @@ public class WorkerController : BaseBehavior {
 			feedingAnimal = collider.gameObject.GetComponent<AnimalController>();
 			if (feedingAnimal != null) {
 				state = CharacterState.FEEDING;
-				character.GetComponent<Animator>().Play("MCFeed");
+				PlayAnimation("MCFeed");
 			} else {
 				warningIcon.renderer.enabled = true;
 			}
@@ -99,6 +103,11 @@ public class WorkerController : BaseBehavior {
 		warningIcon = transform.Find("WarningIcon").gameObject;
 		warningIcon.renderer.enabled = false;
 		indicator.renderer.enabled = false;
+		type = Random.Range(0, 2);
+		if (type == 1) {
+			suffix = "2";
+			PlayAnimation("MCWalk");
+		}
 	}
 	
 	// Update is called once per frame
@@ -109,7 +118,7 @@ public class WorkerController : BaseBehavior {
 		} else if (state == CharacterState.FEEDING) {
 			if (feedingAnimal.Feed(feedingSpeed * Time.deltaTime)) {
 				state = CharacterState.WALKING;
-				character.GetComponent<Animator>().Play("MCWalk");
+				PlayAnimation("MCWalk");
 			}
 		}
 
@@ -202,7 +211,7 @@ public class WorkerController : BaseBehavior {
 	// Die
 	void Die() {
 		state = CharacterState.DIE;
-		character.GetComponent<Animator>().Play("MCDie");
+		PlayAnimation("MCDie");
 		GameController.GetInstance().GameOver();
 	}
 
@@ -225,13 +234,13 @@ public class WorkerController : BaseBehavior {
 	public void Update() {
 
 		if (!isPaused) {
-			if (GameController.GetInstance().IsPaused()) {
-				character.GetComponent<Animator>().Play("MCFeed");
+			if (GameController.GetInstance().IsPaused() && state == CharacterState.WALKING) {
+				PlayAnimation("MCFeed");
 				isPaused = true;
 			}
 		} else {
 			if (!GameController.GetInstance().IsPaused() && state == CharacterState.WALKING) {
-				character.GetComponent<Animator>().Play("MCWalk");
+				PlayAnimation("MCWalk");
 				isPaused = false;
 			}
 		}
@@ -248,6 +257,15 @@ public class WorkerController : BaseBehavior {
 		}
 	}
 
+	void PlayAnimation(string name) {
+		string animationName = name + suffix;
+		Animator animator = character.GetComponent<Animator>();
+		int nameHash = Animator.StringToHash(name);
+		int currentAnim = animator.GetCurrentAnimatorStateInfo(0).nameHash;
 
+		if (nameHash != currentAnim) {
+			animator.Play(name);
+		}
+	}
 
 }

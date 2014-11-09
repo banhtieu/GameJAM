@@ -15,6 +15,9 @@ TextureImporter:
     21300020: CharacterAnimation_10
     21300022: CharacterAnimation_11
     21300024: CharacterAnimation_12
+    21300026: CharacterAnimation_13
+    21300028: CharacterAnimation_14
+    21300030: CharacterAnimation_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -185,6 +188,36 @@ TextureImporter:
         height: 13
       alignment: 2
       pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CharacterAnimation_13
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 300
+        width: 68
+        height: 135
+      alignment: 9
+      pivot: {x: .518655896, y: .101488099}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CharacterAnimation_14
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 155
+        width: 70
+        height: 135
+      alignment: 9
+      pivot: {x: .511847377, y: .089075841}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CharacterAnimation_15
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 10
+        width: 70
+        height: 135
+      alignment: 9
+      pivot: {x: .547119617, y: .0920909718}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
