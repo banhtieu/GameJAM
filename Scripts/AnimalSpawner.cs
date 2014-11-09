@@ -6,7 +6,7 @@ public class AnimalSpawner : MonoBehaviour {
 	// maximum number of animals
 	public int maxAnimals = 5;
 
-	public GameObject animalPrefab;
+	public GameObject[] animalPrefabs;
 	// Spawn area
 	public Rect spawnArea;
 
@@ -29,6 +29,8 @@ public class AnimalSpawner : MonoBehaviour {
 			float randomY = Random.value - 0.5f;
 
 			Vector3 position = new Vector3(size.x * randomX, size.y * randomY, 0.0f);
+
+			GameObject animalPrefab = animalPrefabs[Random.Range(0, animalPrefabs.Length)];
 			GameObject animal = (GameObject) Instantiate(animalPrefab, position, new Quaternion());
 			animals.Add(animal);
 			animal.GetComponent<AnimalController>().SetSpawner(this);

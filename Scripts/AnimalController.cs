@@ -44,13 +44,16 @@ public class AnimalController : BaseBehavior {
 
 	// Use this for initialization
 	void Start () {
-		health = maxHP;
+		if (spawner != null) {
+			health = maxHP;
+		}
 
 		GameObject bar = transform.Find("HealthBar").gameObject;
 		// get health bars
 		healthBar = bar.transform.Find("Health").gameObject;
 	}
-	
+
+
 	// Update is called once per frame
 	public override void ConditionalUpdate () {
 		if (health > 0) {
@@ -58,7 +61,7 @@ public class AnimalController : BaseBehavior {
 		}
 
 		// this die
-		if (health <= 0) {
+		if (health <= 0 && spawner != null) {
 			// die -- game over
 			GameController.GetInstance().GameOver();
 			Instantiate(cryingAnimal, transform.position, transform.rotation);
@@ -75,13 +78,23 @@ public class AnimalController : BaseBehavior {
 		if (health >= (float) maxHP) {
 			health = maxHP;
 			isFull = true;
-			drainSpeed = 0;
+
 
 			Instantiate(heartParticle, transform.position, transform.rotation);
-			gameObject.GetComponent<Animator>().Play("AnimalFull");
-			spawner.ReportFeed(gameObject);
-			DestroyObject(gameObject, 1.0f);
+
+			if (spawner != null) {
+				gameObject.GetComponent<Animator>().Play("AnimalFull");
+				spawner.ReportFeed(gameObject);
+				DestroyObject(gameObject, 1.0f);
+				drainSpeed = 0;
+			} else {
+				health = 0;
+			}
+
+
 		}
+
+		Debug.Log("Feeding " + food);
 
 		UpdateHealthBar();
 

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class WorkerController : BaseBehavior {
@@ -27,6 +28,8 @@ public class WorkerController : BaseBehavior {
 	// warning icon
 	private GameObject warningIcon;
 
+	public GameObject cryObject;
+
 	// mouse down true
 	private bool mouseDown = false;
 
@@ -42,6 +45,8 @@ public class WorkerController : BaseBehavior {
 	// state of current characters
 	private CharacterState state;
 
+	private bool isPaused;
+
 	// character states
 	public enum CharacterState {
 		WALKING,
@@ -52,7 +57,6 @@ public class WorkerController : BaseBehavior {
 	// Mouse Down = true
 	void OnMouseDown() {
 
-		Debug.Log("Mouse Down");
 		mouseDown = true;
 		indicator.renderer.enabled = true;
 		timer = 0;
@@ -81,6 +85,7 @@ public class WorkerController : BaseBehavior {
 			feedingAnimal = collider.gameObject.GetComponent<AnimalController>();
 			if (feedingAnimal != null) {
 				state = CharacterState.FEEDING;
+				character.GetComponent<Animator>().Play("MCFeed");
 			} else {
 				warningIcon.renderer.enabled = true;
 			}
@@ -104,6 +109,7 @@ public class WorkerController : BaseBehavior {
 		} else if (state == CharacterState.FEEDING) {
 			if (feedingAnimal.Feed(feedingSpeed * Time.deltaTime)) {
 				state = CharacterState.WALKING;
+				character.GetComponent<Animator>().Play("MCWalk");
 			}
 		}
 
@@ -214,5 +220,34 @@ public class WorkerController : BaseBehavior {
 		dot = dot > 0.0f ? -1.0f : 1.0f;
 		return new Vector3(dot, 1.0f, 1.0f);
 	}
+
+	//
+	public void Update() {
+
+		if (!isPaused) {
+			if (GameController.GetInstance().IsPaused()) {
+				character.GetComponent<Animator>().Play("MCFeed");
+				isPaused = true;
+			}
+		} else {
+			if (!GameController.GetInstance().IsPaused() && state == CharacterState.WALKING) {
+				character.GetComponent<Animator>().Play("MCWalk");
+				isPaused = false;
+			}
+		}
+
+		if (!isPaused) {
+			ConditionalUpdate();
+		}
+
+		if (GameController.GetInstance().IsGameOver() && state == CharacterState.WALKING) {
+			if (cryObject) {
+				Instantiate(cryObject, transform.position, transform.rotation);
+				DestroyObject(gameObject);
+			}
+		}
+	}
+
+
 
 }

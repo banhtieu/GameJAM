@@ -1,0 +1,190 @@
+fileFormatVersion: 2
+guid: c9d30a9b45c334695aef67377a24c0c0
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: CharacterAnimation_0
+    21300002: CharacterAnimation_1
+    21300004: CharacterAnimation_2
+    21300006: CharacterAnimation_3
+    21300008: CharacterAnimation_4
+    21300010: CharacterAnimation_5
+    21300012: CharacterAnimation_6
+    21300014: CharacterAnimation_7
+    21300016: CharacterAnimation_8
+    21300018: CharacterAnimation_9
+    21300020: CharacterAnimation_10
+    21300022: CharacterAnimation_11
+    21300024: CharacterAnimation_12
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: CharacterAnimation_0
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 222
+        width: 68
+        height: 135
+      alignment: 9
+      pivot: {x: .484932721, y: .0863749161}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CharacterAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 303
+        width: 68
+        height: 135
+      alignment: 9
+      pivot: {x: .518655896, y: .101488128}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CharacterAnimation_2
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 133
+        width: 70
+        height: 135
+      alignment: 9
+      pivot: {x: .547119558, y: .0920909718}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CharacterAnimation_3
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 135
+        width: 70
+        height: 135
+      alignment: 9
+      pivot: {x: .511847377, y: .089075841}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CharacterAnimation_4
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 410
+        width: 66
+        height: 30
+      alignment: 9
+      pivot: {x: .5, y: .180050656}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CharacterAnimation_5
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 372
+        width: 67
+        height: 35
+      alignment: 9
+      pivot: {x: .5, y: .245346501}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CharacterAnimation_6
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 420
+        width: 33
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CharacterAnimation_7
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 405
+        width: 60
+        height: 12
+      alignment: 9
+      pivot: {x: .247677803, y: .978538513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CharacterAnimation_8
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 381
+        width: 67
+        height: 17
+      alignment: 9
+      pivot: {x: .336373746, y: .991336584}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CharacterAnimation_9
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 367
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CharacterAnimation_10
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 345
+        width: 34
+        height: 13
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CharacterAnimation_11
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 325
+        width: 34
+        height: 13
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CharacterAnimation_12
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 304
+        width: 33
+        height: 13
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

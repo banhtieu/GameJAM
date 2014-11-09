@@ -13,6 +13,18 @@ public class GameController : MonoBehaviour {
 
 	public Text scoreText;
 
+	// 
+	public Toggle backgroundSoundToggle;
+	
+	// sound fx toggle.
+	public Toggle sfxSoundToggle;
+
+	public AudioSource backgroundSound;
+
+	public AudioSource gameOverSound;
+
+	public AudioSource walkEffect;
+
 	// the instance of the Game Controller
 	private static GameController instance;
 
@@ -22,13 +34,43 @@ public class GameController : MonoBehaviour {
 	// score
 	private int score;
 
+	private bool isGameOver;
+
 	public void GameOver() {
 		// the game is over
 		isPaused = true;
 		gameOverNotice.enabled = true;
-		Invoke("LoadGameOverLevel", 2.0f);
+
+		if (GameConfig.GetInstance().backgroundMusicOn){
+			backgroundSound.Stop();
+		}
+
+		if (GameConfig.GetInstance().soundEffectOn){
+			walkEffect.Stop();
+			gameOverSound.Play();
+		}
+
+		isGameOver = true;
+		Invoke("LoadGameOverLevel", 3.0f);
 	}
 
+	// Is Game Over
+	public bool IsGameOver() {
+		return isGameOver;
+	}
+
+	// Load a level
+	public void LoadLevel(string level) {
+		Application.LoadLevel(level);
+	}
+
+	public void SetLevel(string name) {
+		GameConfig.GetInstance().levelToLoad = name;
+	}
+
+	public void ShowTutorial() {
+		Application.LoadLevel("Tutorial");
+	}
 
 	// load game over
 	public void LoadGameOverLevel() {
@@ -37,6 +79,10 @@ public class GameController : MonoBehaviour {
 
 	public void ShowInGameMenu() {
 		ingameMenuDialog.GetComponent<Animator>().Play("InGameMenuShow");
+
+		GameConfig gameConfig = GameConfig.GetInstance();
+		backgroundSoundToggle.isOn = gameConfig.backgroundMusicOn;
+		sfxSoundToggle.isOn = gameConfig.soundEffectOn;
 	}
 
 	// Show information
@@ -54,6 +100,10 @@ public class GameController : MonoBehaviour {
 		isPaused = false;
 		informationDialog.GetComponent<Animator>().Play("InformationHide");
 		ingameMenuDialog.GetComponent<Animator>().Play("InformationHide");
+
+		if (GameConfig.GetInstance().soundEffectOn) {
+			walkEffect.Play();
+		}
 	}
 
 	// pause the game
@@ -73,6 +123,18 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		instance = this;
 		score = 0;
+
+		GameConfig config = GameConfig.GetInstance();
+
+		if (scoreText) {
+			if (config.backgroundMusicOn) {
+				backgroundSound.Play();
+			}
+
+			if (config.soundEffectOn) {
+				walkEffect.Play();
+			}
+		}
 	}
 	
 	// Update is called once per frame
@@ -102,6 +164,24 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void PlayGame() {
-		Application.LoadLevel("InGame");
+		Application.LoadLevel(GameConfig.GetInstance().levelToLoad);
+	}
+
+
+	// Update sound settings
+	public void UpdateSoundSettings() {
+		GameConfig config = GameConfig.GetInstance();
+		config.backgroundMusicOn = backgroundSoundToggle.isOn;
+		config.soundEffectOn = sfxSoundToggle.isOn;
+		
+		config.SaveConfig();
+		Debug.Log ("BG: " + config.backgroundMusicOn);
+		Debug.Log("SFX: " + config.soundEffectOn);
+
+		if (config.backgroundMusicOn) {
+			backgroundSound.Play();
+		} else {
+			backgroundSound.Stop();
+		}
 	}
 }
