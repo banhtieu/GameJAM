@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour {
 
 	public GameObject ingameMenuDialog;
 
+	public Animator gameOverNotice;
+
 	public Text scoreText;
 
 	// the instance of the Game Controller
@@ -19,6 +21,19 @@ public class GameController : MonoBehaviour {
 
 	// score
 	private int score;
+
+	public void GameOver() {
+		// the game is over
+		isPaused = true;
+		gameOverNotice.enabled = true;
+		Invoke("LoadGameOverLevel", 2.0f);
+	}
+
+
+	// load game over
+	public void LoadGameOverLevel() {
+		Application.LoadLevel("GameOver");
+	}
 
 	public void ShowInGameMenu() {
 		ingameMenuDialog.GetComponent<Animator>().Play("InGameMenuShow");
@@ -76,9 +91,17 @@ public class GameController : MonoBehaviour {
 		scoreText.text = "" + score;
 	}
 
+	// Get Current Score
+	public int GetScore() {
+		return score;
+	}
+
 	// get current game instance
 	public static GameController GetInstance() {
 		return instance;
 	}
 
+	public void PlayGame() {
+		Application.LoadLevel("InGame");
+	}
 }

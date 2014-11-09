@@ -197,6 +197,7 @@ public class WorkerController : BaseBehavior {
 	void Die() {
 		state = CharacterState.DIE;
 		character.GetComponent<Animator>().Play("MCDie");
+		GameController.GetInstance().GameOver();
 	}
 
 	// Get Mouse Position

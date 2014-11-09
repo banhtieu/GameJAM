@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 2b9214fe8cee144cf8372f0167058ff4
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Level1Obstacle_0
+    21300002: Level1Obstacle_1
+    21300004: Level1Obstacle_2
+    21300006: Level1Obstacle_3
+    21300008: Level1Obstacle_4
+    21300010: Level1Obstacle_5
+    21300012: Level1Obstacle_6
+    21300014: Level1Obstacle_7
+    21300016: Level1Obstacle_8
+    21300018: Level1Obstacle_9
+    21300020: Level1Obstacle_10
+    21300022: Level1Obstacle_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 400
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Level1Obstacle_0
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 910
+        width: 468
+        height: 247
+      alignment: 9
+      pivot: {x: .501690447, y: .16493009}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Level1Obstacle_1
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1421
+        width: 198
+        height: 60
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Level1Obstacle_2
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 1369
+        width: 284
+        height: 122
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Level1Obstacle_3
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 1371
+        width: 284
+        height: 130
+      alignment: 9
+      pivot: {x: .501351774, y: .18308951}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Level1Obstacle_4
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 539
+        width: 429
+        height: 330
+      alignment: 9
+      pivot: {x: .491580278, y: .248254955}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Level1Obstacle_5
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 539
+        width: 586
+        height: 458
+      alignment: 9
+      pivot: {x: .493836164, y: .196141943}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Level1Obstacle_6
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1111
+        width: 254
+        height: 102
+      alignment: 9
+      pivot: {x: .505696833, y: .289390415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Level1Obstacle_7
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 327
+        width: 315
+        height: 213
+      alignment: 9
+      pivot: {x: .509306788, y: .183435008}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Level1Obstacle_8
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 1221
+        width: 199
+        height: 94
+      alignment: 9
+      pivot: {x: .494419128, y: .248124793}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Level1Obstacle_9
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 1313
+        width: 266
+        height: 116
+      alignment: 9
+      pivot: {x: .498660654, y: .175068825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Level1Obstacle_10
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 91
+        width: 205
+        height: 96
+      alignment: 9
+      pivot: {x: .5016554, y: .190858528}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Level1Obstacle_11
+      rect:
+        serializedVersion: 2
+        x: 1637
+        y: 1001
+        width: 320
+        height: 212
+      alignment: 9
+      pivot: {x: .516931176, y: .230008677}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

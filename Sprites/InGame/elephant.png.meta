@@ -1,0 +1,168 @@
+fileFormatVersion: 2
+guid: 205ac57669cec41a59904a0688d7b1ba
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ElephantBody
+    21300002: Tail0
+    21300004: Tail1
+    21300006: Tail2
+    21300008: Tail3
+    21300010: Tail4
+    21300012: Nose0
+    21300014: Nose1
+    21300016: Tear0
+    21300018: Tear1
+    21300020: CryingBody
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: ElephantBody
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 742
+        width: 216
+        height: 194
+      alignment: 9
+      pivot: {x: .727982819, y: .0154035119}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tail0
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 804
+        width: 31
+        height: 57
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tail1
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 807
+        width: 51
+        height: 55
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tail2
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 805
+        width: 77
+        height: 37
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tail3
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 805
+        width: 71
+        height: 44
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tail4
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 790
+        width: 48
+        height: 71
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nose0
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 907
+        width: 60
+        height: 35
+      alignment: 9
+      pivot: {x: .808606446, y: .788567245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nose1
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 900
+        width: 56
+        height: 42
+      alignment: 9
+      pivot: {x: .780713201, y: .830973327}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tear0
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 559
+        width: 149
+        height: 42
+      alignment: 9
+      pivot: {x: .248492971, y: .982673287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tear1
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 469
+        width: 172
+        height: 43
+      alignment: 9
+      pivot: {x: .273663372, y: .990747511}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CryingBody
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 197
+        width: 256
+        height: 250
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

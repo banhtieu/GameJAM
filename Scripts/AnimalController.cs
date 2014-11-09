@@ -21,6 +21,9 @@ public class AnimalController : BaseBehavior {
 	// heart particle
 	public GameObject heartParticle;
 
+	// crying animal
+	public GameObject cryingAnimal;
+
 	public Color fullColor = Color.green;
 
 	public Color deadColor = Color.red;
@@ -57,6 +60,9 @@ public class AnimalController : BaseBehavior {
 		// this die
 		if (health <= 0) {
 			// die -- game over
+			GameController.GetInstance().GameOver();
+			Instantiate(cryingAnimal, transform.position, transform.rotation);
+			DestroyObject(gameObject);
 		}
 
 		UpdateHealthBar();
