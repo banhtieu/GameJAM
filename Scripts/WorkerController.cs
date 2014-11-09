@@ -28,7 +28,7 @@ public class WorkerController : BaseBehavior {
 	// warning icon
 	private GameObject warningIcon;
 
-	public GameObject cryObject;
+	public GameObject[] cryObjects;
 
 	// mouse down true
 	private bool mouseDown = false;
@@ -91,7 +91,9 @@ public class WorkerController : BaseBehavior {
 				state = CharacterState.FEEDING;
 				PlayAnimation("MCFeed");
 			} else {
-				warningIcon.renderer.enabled = true;
+				if (warningIcon != null) {
+					warningIcon.renderer.enabled = true;
+				}
 			}
 		}
 	}
@@ -103,7 +105,7 @@ public class WorkerController : BaseBehavior {
 		warningIcon = transform.Find("WarningIcon").gameObject;
 		warningIcon.renderer.enabled = false;
 		indicator.renderer.enabled = false;
-		type = 1;//Random.Range(0, 2);
+		type = Random.Range(0, 2);
 		if (type == 1) {
 			suffix = "2";
 			PlayAnimation("MCWalk");
@@ -237,6 +239,10 @@ public class WorkerController : BaseBehavior {
 			if (GameController.GetInstance().IsPaused() && state == CharacterState.WALKING) {
 				PlayAnimation("MCFeed");
 				isPaused = true;
+			} 
+
+			if (state == CharacterState.WALKING) {
+				PlayAnimation("MCWalk");
 			}
 		} else {
 			if (!GameController.GetInstance().IsPaused() && state == CharacterState.WALKING) {
@@ -250,8 +256,8 @@ public class WorkerController : BaseBehavior {
 		}
 
 		if (GameController.GetInstance().IsGameOver() && state == CharacterState.WALKING) {
-			if (cryObject) {
-				Instantiate(cryObject, transform.position, transform.rotation);
+			if (cryObjects != null) {
+				Instantiate(cryObjects[type], transform.position, transform.rotation);
 				DestroyObject(gameObject);
 			}
 		}
@@ -259,14 +265,20 @@ public class WorkerController : BaseBehavior {
 
 	void PlayAnimation(string name) {
 		string animationName = name + suffix;
-		Debug.Log("Playing " + animationName);
-		Animator animator = character.GetComponent<Animator>();
-		//int nameHash = Animator.StringToHash(name);
-		//int currentAnim = animator.GetCurrentAnimatorStateInfo(0).nameHash;
+		//Debug.Log("Playing " + animationName);
 
-		//if (nameHash != currentAnim) {
-		animator.Play(name);
-		//}
+		if (character != null) {
+			Animator animator = character.GetComponent<Animator>();
+
+			if (animator != null) {
+				int nameHash = Animator.StringToHash(name);
+				int currentAnim = animator.GetCurrentAnimatorStateInfo(0).nameHash;
+
+				if (nameHash != currentAnim) {
+					animator.Play(animationName);
+				}
+			}
+		}
 	}
 
 }
