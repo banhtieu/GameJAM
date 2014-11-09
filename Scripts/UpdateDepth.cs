@@ -10,7 +10,7 @@ public class UpdateDepth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float y = transform.position.y;
+		float y = transform.position.y; 
 		transform.position = new Vector3(transform.position.x, transform.position.y, y);
 	}
 }

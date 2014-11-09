@@ -94,8 +94,6 @@ public class AnimalController : BaseBehavior {
 
 		}
 
-		Debug.Log("Feeding " + food);
-
 		UpdateHealthBar();
 
 		return isFull;

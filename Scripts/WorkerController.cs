@@ -99,11 +99,11 @@ public class WorkerController : BaseBehavior {
 	// Use this for initialization
 	void Start () {
 		indicator = transform.Find("Indicator").gameObject;
-		character = transform.Find("Character").gameObject;
+		character = transform.Find("CharacterHolder").Find ("Character").gameObject;
 		warningIcon = transform.Find("WarningIcon").gameObject;
 		warningIcon.renderer.enabled = false;
 		indicator.renderer.enabled = false;
-		type = Random.Range(0, 2);
+		type = 1;//Random.Range(0, 2);
 		if (type == 1) {
 			suffix = "2";
 			PlayAnimation("MCWalk");
@@ -259,13 +259,14 @@ public class WorkerController : BaseBehavior {
 
 	void PlayAnimation(string name) {
 		string animationName = name + suffix;
+		Debug.Log("Playing " + animationName);
 		Animator animator = character.GetComponent<Animator>();
-		int nameHash = Animator.StringToHash(name);
-		int currentAnim = animator.GetCurrentAnimatorStateInfo(0).nameHash;
+		//int nameHash = Animator.StringToHash(name);
+		//int currentAnim = animator.GetCurrentAnimatorStateInfo(0).nameHash;
 
-		if (nameHash != currentAnim) {
-			animator.Play(name);
-		}
+		//if (nameHash != currentAnim) {
+		animator.Play(name);
+		//}
 	}
 
 }
